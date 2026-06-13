@@ -11,7 +11,7 @@
       href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
       rel="stylesheet"
     />
-    <!-- Css -->
+    <!-- CSS -->
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -29,7 +29,7 @@
           />
           <span
             class="self-center text-3xl text-white text-heading font-semibold whitespace-nowrap"
-            >TRANG NGƯỜI DÙNG</span
+            >TRANG BÁN HÀNG</span
           >
         </a>
         <!-- Thẻ div 1 -->
@@ -193,8 +193,8 @@
 
     <!-- Carousel -->
     <div id="carousel__header" class="pt-50">
-      <div id="carousel__content" class="">
-        <div class="w-[100%] pl-10 relative">
+      <div id="carousel__content" class="grid lg:grid-cols-2 gap-1">
+        <div id="carousel__left" class="w-[100%] relative">
           <div
             id="custom-controls-gallery"
             class="relative w-full"
@@ -306,13 +306,42 @@
             </div>
           </div>
         </div>
+        <div id="carousel__right" class="pl-10 pr-3 pb-10">
+          <h1 class="text-[4rem] text-white">Iphone | Samsung</h1>
+          <p class="text-lg pt-3">
+            <span class="font-bold">iPhone</span>: Tái định nghĩa chuẩn mực công
+            nghệ toàn cầu. Không chỉ là một chiếc điện thoại thông minh, đó là
+            biểu tượng của sự sang trọng, dẫn đầu xu thế với thiết kế thời
+            thượng, hiệu năng đỉnh cao và hệ sinh thái iOS mượt mà tuyệt đối.
+          </p>
+          <p class="text-lg pt-3">
+            <span class="font-bold">Samsung</span>: Kiến tạo tương lai công
+            nghệ. Tiên phong với những đột phá về màn hình gập độc đáo, camera
+            zoom siêu phân giải và hiệu năng xử lý đỉnh cao, mang đến trải
+            nghiệm di động không giới hạn cho cuộc sống hiện đại.
+          </p>
+          <p class="text-lg pt-3 italic">
+            <span class="underline"
+              >" Mỗi dòng máy một cá tính, đâu là siêu phẩm dành riêng cho
+              bạn?</span
+            >
+            <span class="font-bold">
+              Hãy cuộn xuống phía dưới, khám phá chi tiết cấu hình và chọn ngay
+              cho mình một chiếc iPhone thanh lịch hoặc một chiếc Samsung Galaxy
+              mạnh mẽ với mức giá ưu đãi nhất ngay hôm nay! "
+            </span>
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- Product -->
+    <h1 class="text-[4rem] text-center text-white italic font-bold pt-15">
+      NHỮNG SẢN PHẨM ĐIỆN THOẠI
+    </h1>
     <div
       id="product"
-      class="grid md:grid-cols-4 md:gap-4 padding__y p-25 product-bg"
+      class="grid md:grid-cols-4 md:gap-4 p-25 pt-15 product-bg"
     >
       <div
         id="product__item-1"
@@ -633,8 +662,8 @@
 
             <!-- Xem Thông tin -->
             <button
-              data-modal-target="default-modal"
-              data-modal-toggle="default-modal"
+              data-modal-target="modal-samsung-M51"
+              data-modal-toggle="modal-samsung-M51"
               class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
               type="button"
             >
@@ -643,7 +672,7 @@
 
             <!-- Main modal -->
             <div
-              id="default-modal"
+              id="modal-samsung-M51"
               tabindex="-1"
               aria-hidden="true"
               class="text-white hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
@@ -663,7 +692,7 @@
                     <button
                       type="button"
                       class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center"
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-samsung-M51"
                     >
                       <svg
                         class="w-5 h-5"
@@ -688,21 +717,23 @@
                   <!-- Modal body -->
                   <div class="space-y-4 md:space-y-6 py-4 md:py-6">
                     <ul>
-                      <li>Name: Iphone X</li>
-                      <li>Price: 1000$</li>
-                      <li>Screen: screen 68</li>
-                      <li>Back Camera: 2 camera 12 MP</li>
-                      <li>Front Camera: 7MP</li>
+                      <li>Name: Samsung Galaxy M51</li>
+                      <li>Price: 3500$</li>
+                      <li>Screen: screen 69</li>
+                      <li>Back Camera: Chính 64 MP & Phụ 12 MP, 5 MP, 5 MP</li>
+                      <li>Front Camera: 32 MP</li>
                       <li>
                         <p>Image</p>
                         <img
-                          src="../img/61nfuFmjL2L-removebg-preview.png"
+                          src="../img/Samsung-Galaxy-M51-featured-image-packshot-review-removebg-preview.png"
                           alt=""
                           width="20%"
                         />
                       </li>
-                      <li>Description: Thiết kế mang tính đột phá</li>
-                      <li>Type: Iphone</li>
+                      <li>
+                        Description: Thiết kế đột phá, màn hình tuyệt đỉnh
+                      </li>
+                      <li>Type: Samsung</li>
                     </ul>
                   </div>
                   <!-- Modal footer -->
@@ -710,14 +741,14 @@
                     class="flex items-center border-t border-default space-x-4 pt-4 md:pt-5"
                   >
                     <button
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-samsung-M51"
                       type="button"
                       class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
                       Close
                     </button>
                     <button
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-samsung-M51"
                       type="button"
                       class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
@@ -852,8 +883,8 @@
             >
             <!-- Xem Thông tin -->
             <button
-              data-modal-target="default-modal"
-              data-modal-toggle="default-modal"
+              data-modal-target="modal-samsung-M22"
+              data-modal-toggle="modal-samsung-M22"
               class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
               type="button"
             >
@@ -862,7 +893,7 @@
 
             <!-- Main modal -->
             <div
-              id="default-modal"
+              id="modal-samsung-M22"
               tabindex="-1"
               aria-hidden="true"
               class="text-white hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
@@ -882,7 +913,7 @@
                     <button
                       type="button"
                       class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center"
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-samsung-M22"
                     >
                       <svg
                         class="w-5 h-5"
@@ -907,21 +938,21 @@
                   <!-- Modal body -->
                   <div class="space-y-4 md:space-y-6 py-4 md:py-6">
                     <ul>
-                      <li>Name: Iphone X</li>
-                      <li>Price: 1000$</li>
-                      <li>Screen: screen 68</li>
-                      <li>Back Camera: 2 camera 12 MP</li>
-                      <li>Front Camera: 7MP</li>
+                      <li>Name: Samsung Galaxy M22</li>
+                      <li>Price: 45000$</li>
+                      <li>Screen: screen 70</li>
+                      <li>Back Camera: Chính 12 MP & Phụ 64 MP, 12 MP</li>
+                      <li>Front Camera: 32 MP</li>
                       <li>
                         <p>Image</p>
                         <img
-                          src="../img/61nfuFmjL2L-removebg-preview.png"
+                          src="../img/Samsung-Galaxy-M22-removebg-preview.png"
                           alt=""
                           width="20%"
                         />
                       </li>
                       <li>Description: Thiết kế mang tính đột phá</li>
-                      <li>Type: Iphone</li>
+                      <li>Type: Samsung</li>
                     </ul>
                   </div>
                   <!-- Modal footer -->
@@ -929,14 +960,14 @@
                     class="flex items-center border-t border-default space-x-4 pt-4 md:pt-5"
                   >
                     <button
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-samsung-M22"
                       type="button"
                       class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
                       Close
                     </button>
                     <button
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-samsung-M22"
                       type="button"
                       class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
@@ -1070,8 +1101,8 @@
             >
             <!-- Xem Thông tin -->
             <button
-              data-modal-target="default-modal"
-              data-modal-toggle="default-modal"
+              data-modal-target="modal-iphone-11"
+              data-modal-toggle="modal-iphone-11"
               class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
               type="button"
             >
@@ -1080,7 +1111,7 @@
 
             <!-- Main modal -->
             <div
-              id="default-modal"
+              id="modal-iphone-11"
               tabindex="-1"
               aria-hidden="true"
               class="text-white hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
@@ -1100,7 +1131,7 @@
                     <button
                       type="button"
                       class="text-body bg-transparent hover:bg-neutral-tertiary hover:text-heading rounded-base text-sm w-9 h-9 ms-auto inline-flex justify-center items-center"
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-iphone-11"
                     >
                       <svg
                         class="w-5 h-5"
@@ -1125,20 +1156,22 @@
                   <!-- Modal body -->
                   <div class="space-y-4 md:space-y-6 py-4 md:py-6">
                     <ul>
-                      <li>Name: Iphone X</li>
+                      <li>Name: Iphone 11</li>
                       <li>Price: 1000$</li>
-                      <li>Screen: screen 68</li>
-                      <li>Back Camera: 2 camera 12 MP</li>
-                      <li>Front Camera: 7MP</li>
+                      <li>Screen: screen 54</li>
+                      <li>Back Camera: Chính 12 MP & Phụ 64 MP, 12 MP</li>
+                      <li>Front Camera: 32 MP</li>
                       <li>
                         <p>Image</p>
                         <img
-                          src="../img/61nfuFmjL2L-removebg-preview.png"
+                          src="../img/36938_iphone11_black_select_2019-removebg-preview.png"
                           alt=""
                           width="20%"
                         />
                       </li>
-                      <li>Description: Thiết kế mang tính đột phá</li>
+                      <li>
+                        Description: Thiết kế đột phá, màn hình tuyệt đỉnh
+                      </li>
                       <li>Type: Iphone</li>
                     </ul>
                   </div>
@@ -1147,14 +1180,14 @@
                     class="flex items-center border-t border-default space-x-4 pt-4 md:pt-5"
                   >
                     <button
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-iphone-11"
                       type="button"
                       class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
                       Close
                     </button>
                     <button
-                      data-modal-hide="default-modal"
+                      data-modal-hide="modal-iphone-11"
                       type="button"
                       class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
