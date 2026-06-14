@@ -1,3 +1,7 @@
+import ProductManage from "../models/productManage.js";
+
+const productManage = new ProductManage();
+
 function getListProduct() {
   const url = "https://6a183c611878294b597ca1d6.mockapi.io/api/WebBanHang";
   const promise = axios({
@@ -10,6 +14,7 @@ function getListProduct() {
       const data = result.data;
       console.log(data);
       renderUI(data);
+      productManage.getListProduct(data);
     })
     .catch(function (error) {
       console.log(error);
@@ -253,3 +258,14 @@ function renderUI(data) {
     initFlowbite(); // Câu lệnh yêu cầu Flowbite quét lại toàn bộ các nút modal mới sinh ra
   }
 }
+
+function getId(id) {
+  return document.getElementById(id);
+}
+
+getId("btn-type").addEventListener("change", function () {
+  const type = getId("btn-type").value;
+  console.log(type);
+  const listType = productManage.filterProduct(type);
+  renderUI(listType);
+});

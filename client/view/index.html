@@ -23,8 +23,8 @@
         <!-- Thẻ a -->
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            class="h-7"
+            src="../img/Samsung_Galaxy-S22-Ultra_Burgundy-removebg-preview.png"
+            class="h-10"
             alt="Flowbite Logo"
           />
           <span
@@ -90,7 +90,7 @@
             />
             <!-- Nút enter tìm kiếm -->
             <div
-              class="bg-blue-900 cursor-pointer md:ml-5 rounded-sm w-50 text-center pt-2 pb-2"
+              class="bg-gray-200 cursor-pointer md:ml-5 rounded-sm w-50 text-center pt-2 pb-2"
             >
               Tìm Kiếm
             </div>
@@ -194,7 +194,7 @@
     <!-- Carousel -->
     <div id="carousel__header" class="pt-50">
       <div id="carousel__content" class="grid lg:grid-cols-2 gap-1">
-        <div id="carousel__left" class="w-[100%] relative">
+        <div id="carousel__left" class="w-[100%] relative mt-9">
           <div
             id="custom-controls-gallery"
             class="relative w-full"
@@ -336,11 +336,20 @@
     </div>
 
     <!-- Product -->
-    <h1 class="text-[4rem] text-center text-white italic font-bold pt-15">
+    <h1 class="text-[4rem] text-center text-white italic font-bold pt-25 pb-10">
       NHỮNG SẢN PHẨM ĐIỆN THOẠI
     </h1>
+
+    <div class="relative type-product mb-4">
+      <select id="btn-type" class="mb-1">
+        <option value="all">Chọn loại sản phẩm</option>
+        <option value="Iphone">Iphone</option>
+        <option value="Samsung">Samsung</option>
+      </select>
+    </div>
+
     <div
-      class="grid md:grid-cols-4 md:gap-4 p-25 pt-15 product-bg"
+      class="grid md:grid-cols-4 md:gap-4 p-25 pt-20 product-bg"
       id="product-content"
       class="row"
     ></div>
@@ -543,6 +552,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <!-- JS -->
-    <script src="../controllers/main.js"></script>
+    <script type="module" src="../controllers/main.js"></script>
   </body>
 </html>

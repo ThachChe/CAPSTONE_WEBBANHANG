@@ -1,5 +1,5 @@
 .padding__y {
-  padding-top: 143px;
+  padding-top: 140px;
 }
 
 body {
@@ -53,4 +53,9 @@ nav {
   height: 200px;
   object-fit: cover;
   object-position: center;
+}
+
+.type-product {
+  position: absolute;
+  right: 100px;
 }
