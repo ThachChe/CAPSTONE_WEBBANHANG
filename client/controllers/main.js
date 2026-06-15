@@ -211,6 +211,7 @@ function renderUI(data) {
                     Close
                   </button>
                   <button
+                    onclick="themVaoGioHang('${product.id}') "
                     data-modal-hide="modal-${product.id}"
                     type="button"
                     class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
@@ -224,6 +225,7 @@ function renderUI(data) {
 
           <!-- Giỏ Hàng -->
           <button
+            onclick="themVaoGioHang('${product.id}')"
             type="button"
             class="inline-flex cursor-pointer items-center text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none"
           >
@@ -259,13 +261,26 @@ function renderUI(data) {
   }
 }
 
+// Lấy id từ HTML
 function getId(id) {
   return document.getElementById(id);
 }
 
+//Filter lọc sản phẩm
 getId("btn-type").addEventListener("change", function () {
   const type = getId("btn-type").value;
   console.log(type);
   const listType = productManage.filterProduct(type);
   renderUI(listType);
 });
+
+//bấm vào nút add to cart thì cart sẽ nhảy lên 1
+// onclick ="function"
+window.themVaoGioHang = function (id) {
+  // id ở đây chính là mã sản phẩm (ví dụ: "1", "2") được truyền từ giao diện vào
+  let index = productManage.getIndex(id);
+  console.log(index);
+
+  const listCart = [productManage.addToCart(id)];
+  console.log(listCart);
+};
