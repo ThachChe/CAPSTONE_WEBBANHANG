@@ -68,7 +68,7 @@
       <!-- Thanh công cụ (Nút thêm và Ô tìm kiếm) -->
       <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
         <!-- Nút Thêm Mới -->
-        <button type="button" data-modal-target="product-modal" data-modal-toggle="product-modal"
+        <button id="btnThemSP" type="button" data-modal-target="product-modal" data-modal-toggle="product-modal"
           class="flex items-center justify-center text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-4 py-2">
           <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://w3.org"
             aria-hidden="true">
@@ -106,28 +106,19 @@
               <th scope="col" class="px-4 py-3 w-16">STT</th>
               <th scope="col" class="px-4 py-3">Tên Sản Phẩm</th>
               <th scope="col" class="px-4 py-3">Giá</th>
+              <th scope="col" class="px-4 py-3">Màn Hình</th>
+              <th scope="col" class="px-4 py-3">Camera Sau</th>
+              <th scope="col" class="px-4 py-3">Camera Trước</th>
               <th scope="col" class="px-4 py-3">Hình Ảnh</th>
               <th scope="col" class="px-4 py-3">Mô Tả</th>
+              <th scope="col" class="px-4 py-3">Hãng</th>
+              <th scope="col" class="px-4 py-3 w-32">Số lượng</th>
               <th scope="col" class="px-4 py-3 w-32">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="tblDanhSachSP">
             <!-- Dòng dữ liệu trống sẵn sàng để đổ dữ liệu từ JS/Axios -->
-            <tr class="border-b hover:bg-gray-50">
-              <td class="px-4 py-3 font-medium text-gray-900">1</td>
-              <td class="px-4 py-3 font-semibold text-gray-900">Điện thoại iPhone 15</td>
-              <td class="px-4 py-3 text-red-600 font-medium">25.000.000 đ</td>
-              <td class="px-4 py-3">
-                <div
-                  class="w-12 h-12 bg-gray-100 rounded border border-gray-200 flex items-center justify-center text-xs text-gray-400">
-                  No Img</div>
-              </td>
-              <td class="px-4 py-3 max-w-xs truncate">Phiên bản chính hãng VN/A dung lượng 128GB...</td>
-              <td class="px-4 py-3 flex space-x-2">
-                <button class="text-white bg-blue-600 hover:bg-blue-700 text-xs px-2.5 py-1.5 rounded">Sửa</button>
-                <button class="text-white bg-red-600 hover:bg-red-700 text-xs px-2.5 py-1.5 rounded">Xóa</button>
-              </td>
-            </tr>
+           
           </tbody>
         </table>
       </div>
@@ -146,8 +137,8 @@
 
         <!-- Header -->
         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
-          <h3 class="text-2xl font-semibold text-gray-900">
-            Thêm sản phẩm
+          <h3 id="modal-title" class="text-2xl font-semibold text-gray-900">
+            Modal Heading
           </h3>
 
           <button type="button"
