@@ -1,4 +1,5 @@
 import Services from "./../services/api.js";
+import Product from "../models/product.js";
 
 function getId(id) {
   return document.getElementById(id);
@@ -34,9 +35,8 @@ function renderUI(list) {
                 <td class="px-4 py-3">
                     <img class="w-12 h-12 object-cover rounded border" src="${product.img}" width="50" />
                 </td>
-                <td class="px-4 py-3 text-gray-600 max-w-xs truncate">${product.desc}</td>
                 <td class="px-4 py-3 font-semibold text-gray-600 max-w-xs truncate">${product.type}</td>
-                <td class="px-4 py-3 text-red-500 font-medium">${product.quantity}</td>
+                <td class="px-4 py-3 text-gray-600 max-w-xs truncate">${product.desc}</td>
                 <td>
                     <button class="px-3 py-1 text-xs text-white bg-red-500 hover:bg-red-600 rounded" onclick="handleDelete(${product.id})">Delete</button>
                 </td>
@@ -74,4 +74,51 @@ window.handleDelete = handleDelete;
 getId("btnThemSP").onclick = function () {
   // Cập nhật title modal
   document.getElementById("modal-title").innerHTML = "Add Product";
+
+  //Tạo nút Add Product => Footer modal
+  const btnAdd = `<div class="flex justify-end w-full">
+      <button class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5" onclick="handleAddProduct()">
+        Add Product
+      </button>
+    </div>`;
+  document.getElementById("modal-footer").innerHTML = btnAdd;
 };
+
+/**
+ * Add Product
+ */
+
+function handleAddProduct() {
+  //Dom tới các thẻ input lấy value
+  const name = getId("tenSP").value;
+  const price = getId("giaSP").value;
+  const screen = getId("manHinhSP").value;
+  const backCamera = getId("camSauSP").value;
+  const frontCamera = getId("camTruocSP").value;
+  const img = getId("hinhAnh").value;
+  const type = getId("hangSP").value;
+  const desc = getId("moTa").value;
+  //Tạo đối tượng product từ lớp đối tượng Product
+  const product = new Product(
+    "",
+    name,
+    price,
+    screen,
+    backCamera,
+    frontCamera,
+    img,
+    type,
+    desc,
+  );
+  // Gọi tới server truyền dữ liệu
+  const promise = services.addProductApi(product);
+  promise
+    .then(function (result) {
+      const data = result.data;
+      console.log(data);
+    })
+    .catch(function () {
+      console.log(error);
+    });
+}
+window.handleAddProduct = handleAddProduct;
