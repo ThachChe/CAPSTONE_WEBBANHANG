@@ -110,15 +110,14 @@
               <th scope="col" class="px-4 py-3">Camera Sau</th>
               <th scope="col" class="px-4 py-3">Camera Trước</th>
               <th scope="col" class="px-4 py-3">Hình Ảnh</th>
-              <th scope="col" class="px-4 py-3">Mô Tả</th>
               <th scope="col" class="px-4 py-3">Hãng</th>
-              <th scope="col" class="px-4 py-3 w-32">Số lượng</th>
+              <th scope="col" class="px-4 py-3">Mô Tả</th>
               <th scope="col" class="px-4 py-3 w-32">Action</th>
             </tr>
           </thead>
           <tbody id="tblDanhSachSP">
             <!-- Dòng dữ liệu trống sẵn sàng để đổ dữ liệu từ JS/Axios -->
-           
+
           </tbody>
         </table>
       </div>
@@ -171,6 +170,24 @@
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="Nhập vào giá">
           </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-900">Màn hình</label>
+            <input type="text" id="manHinhSP"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Ví dụ: OLED 6.1 inch">
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-900">Camera Sau</label>
+            <input type="text" id="camSauSP"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Ví dụ: 48MP">
+          </div>
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-900">Camera Trước</label>
+            <input type="text" id="camTruocSP"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Ví dụ: 12MP">
+          </div>
 
           <div class="mb-4">
             <label class="block mb-2 text-sm font-medium text-gray-900">
@@ -180,7 +197,12 @@
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="Nhập vào hình sản phẩm">
           </div>
-
+          <div>
+            <label class="block mb-1 text-sm font-medium text-gray-900">Hãng</label>
+            <input type="text" id="hangSP"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Apple, Samsung...">
+          </div>
           <div class="mb-4">
             <label class="block mb-2 text-sm font-medium text-gray-900">
               Mô tả
@@ -189,10 +211,15 @@
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Nhập mô tả sản phẩm"></textarea>
           </div>
+          <!-- Footer Buttons bên trong Form -->
+          <div id="modal-footer" class="border-t pt-4">
+
+          </div>
+        </form>
 
       </div>
 
-      </form>
+
 
     </div>
 
