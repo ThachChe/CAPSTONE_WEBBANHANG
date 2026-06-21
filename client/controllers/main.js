@@ -273,6 +273,38 @@ getId("btn-type").addEventListener("change", function () {
   renderUI(listType);
 });
 
+function renderCart(data) {
+  let content = ``;
+  for (let i = 0; i < data.length; i++) {
+    const productCart = data[i];
+    content += `
+       <div class="space-y-4 md:space-y-6 py-4 md:py-6">
+                      <ul>
+                        <li>Name: ${productCart.name}</li>
+                        <li>Price: ${productCart.price}$</li>
+                        <li>
+                          <p>Image</p>
+                          <img src="${productCart.img}" alt="" width="20%" />
+                        </li>
+                        <li>Type: ${productCart.type}</li>
+                        <li>Quantity: ${productCart.quantity}</li>
+                      </ul>
+
+                      <div
+                        id="modal__body-footer"
+                        class="flex items-center justify-between"
+                      >
+                        <h1 class="text-xl">Total Quantity: ${productCart.quantity}</h1>
+                        <h1 class="text-xl">Total Amount:${productCart.quantity * productCart.price} </h1>
+                      </div>
+                    </div>
+                    <hr />
+                    
+    `;
+  }
+  getId("infoCart").innerHTML = content;
+}
+
 //bấm vào nút add to cart thì cart sẽ nhảy lên 1
 // onclick ="function"
 
@@ -285,9 +317,10 @@ window.themVaoGioHang = function (id, quantity) {
   console.log(listCart);
 
   // tìm vị trí của sản phẩm muốn show ra số lượng
-  let product = listCart.find((item) => item.id === id);
+  let productCard = listCart.find((item) => item.id === id);
 
-  console.log(product.quantity);
+  console.log(productCard.quantity);
+  renderCart(listCart);
 
   let resultQuantity = 0;
   for (let i = 0; i < listCart.length; i++) {
