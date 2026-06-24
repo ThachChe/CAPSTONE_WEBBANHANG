@@ -279,7 +279,7 @@ function renderCart(data) {
     const productCart = data[i];
     content += `
        <div class="space-y-4 md:space-y-6 py-4 md:py-6">
-                      <ul>
+                      <ul class="text-lg">
                         <li>Name: ${productCart.name}</li>
                         <li>Price: ${productCart.price}$</li>
                         <li>
@@ -290,7 +290,10 @@ function renderCart(data) {
                         <li>Quantity: ${productCart.quantity}</li>
                       </ul>
 
-                      <form class="max-w-xs mx-auto">
+
+                      
+
+                      <form class="max-w-xs ">
                       <label
                         for="quantity-input"
                         class="block mb-2.5 text-sm font-medium text-heading"
@@ -299,9 +302,11 @@ function renderCart(data) {
                       <div
                         class="relative flex items-center max-w-[9rem] shadow-xs rounded-base"
                       >
+                        
                         <button
                           type="button"
                           id="decrement-button"
+                          onclick="giamSoLuong('${productCart.id}')"
                           data-input-counter-decrement="quantity-input"
                           class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-s-base text-sm px-3 focus:outline-none h-10"
                         >
@@ -325,11 +330,11 @@ function renderCart(data) {
                         </button>
                         <input
                           type="text"
-                          id="${productCart.quantity}"
+                          id="quantity-${productCart.id}"
                           data-input-counter
                           aria-describedby="helper-text-explanation"
-                          class="border-x-0 h-10 placeholder:text-heading text-center w-full bg-gray-500 border-default-medium py-2.5 placeholder:text-body"
-                          placeholder="{productCart.quantity}"
+                          class="border-x-0 h-10 placeholder:text-heading text-center w-15 bg-gray-500 border-default-medium py-2.5 placeholder:text-body"
+                          placeholder="${productCart.quantity}"
                           value="${productCart.quantity}"
                           required
                         />
@@ -358,6 +363,8 @@ function renderCart(data) {
                             />
                           </svg>
                         </button>
+
+                        <button type="button" onclick="deleteProduct('${productCart.id}')" class=" ml-110 text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-e-base text-sm px-5 focus:outline-none h-10" >Delete Product<button/>
                       </div>
                     </form>
 
@@ -375,6 +382,50 @@ function renderCart(data) {
   }
   getId("infoCart").innerHTML = content;
 }
+
+window.tangSoLuong = function (id) {
+  // tìm sản phẩm trong giỏ hàng
+  let productCart = productManage.arrCart.find((item) => item.id === id);
+
+  // nếu tìm thấy
+  if (productCart) {
+    productCart.quantity += 1;
+  }
+
+  // render lại giỏ hàng
+  renderCart(productManage.arrCart);
+};
+
+window.giamSoLuong = function (id) {
+  let productCart = productManage.arrCart.find((item) => item.id === id);
+
+  if (productCart) {
+    productCart.quantity -= 1;
+
+    // nếu giảm về 0 thì xóa khỏi giỏ
+    if (productCart.quantity === 0) {
+      let index = productManage.arrCart.findIndex((item) => item.id === id);
+
+      productManage.arrCart.splice(index, 1);
+    }
+  }
+
+  renderCart(productManage.arrCart);
+};
+
+window.deleteProduct = function (id) {
+  const product = productManage.arrCart;
+
+  for (let i = 0; i < product.length; i++) {
+    if (product[i].id === id) {
+      product.splice(i, 1);
+
+      break;
+    }
+  }
+
+  renderCart(product);
+};
 
 //bấm vào nút add to cart thì cart sẽ nhảy lên 1
 // onclick ="function"
