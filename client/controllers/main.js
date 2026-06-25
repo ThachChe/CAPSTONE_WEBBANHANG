@@ -15,6 +15,10 @@ function getListProduct() {
       console.log(data);
       renderUI(data);
       productManage.getListProduct(data);
+
+      renderCart(productManage.arrCart);
+
+      getId("quantity").innerHTML = productManage.getTotalQuantity();
     })
     .catch(function (error) {
       console.log(error);
@@ -386,18 +390,27 @@ function renderCart(data) {
 window.tangSoLuong = function (id) {
   // tìm sản phẩm trong giỏ hàng
   let productCart = productManage.arrCart.find((item) => item.id === id);
+  let listCart = productManage.arrCart;
 
   // nếu tìm thấy
   if (productCart) {
     productCart.quantity += 1;
+    productManage.saveCart();
+  }
+
+  let resultQuantity = 0;
+  for (let i = 0; i < listCart.length; i++) {
+    resultQuantity += listCart[i].quantity;
   }
 
   // render lại giỏ hàng
   renderCart(productManage.arrCart);
+  getId("quantity").innerHTML = resultQuantity;
 };
 
 window.giamSoLuong = function (id) {
   let productCart = productManage.arrCart.find((item) => item.id === id);
+  let listCart = productManage.arrCart;
 
   if (productCart) {
     productCart.quantity -= 1;
@@ -410,7 +423,15 @@ window.giamSoLuong = function (id) {
     }
   }
 
+  productManage.saveCart();
+
+  let resultQuantity = 0;
+  for (let i = 0; i < listCart.length; i++) {
+    resultQuantity += listCart[i].quantity;
+  }
+
   renderCart(productManage.arrCart);
+  getId("quantity").innerHTML = resultQuantity;
 };
 
 window.deleteProduct = function (id) {
@@ -424,7 +445,27 @@ window.deleteProduct = function (id) {
     }
   }
 
+  productManage.saveCart();
+
   renderCart(product);
+
+  let resultQuantity = 0;
+
+  for (let i = 0; i < product.length; i++) {
+    resultQuantity += product[i].quantity;
+  }
+
+  getId("quantity").innerHTML = resultQuantity;
+};
+
+getId("btn-buy").onclick = function () {
+  productManage.clearProduct();
+
+  console.log(productManage.arrCart);
+
+  renderCart(productManage.arrCart);
+
+  getId("quantity").innerHTML = "";
 };
 
 //bấm vào nút add to cart thì cart sẽ nhảy lên 1

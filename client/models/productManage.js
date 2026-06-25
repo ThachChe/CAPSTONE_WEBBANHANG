@@ -1,7 +1,7 @@
 class ProductManage {
   constructor() {
     this.arrProduct = [];
-    this.arrCart = [];
+    this.arrCart = JSON.parse(localStorage.getItem("cart")) || [];
   }
 
   //Data from Axios
@@ -61,9 +61,31 @@ class ProductManage {
           quantity: 1,
         });
       }
+
+      this.saveCart();
     }
 
     return this.arrCart;
+  }
+
+  clearProduct() {
+    this.arrCart = [];
+
+    localStorage.removeItem("cart");
+  }
+
+  saveCart() {
+    localStorage.setItem("cart", JSON.stringify(this.arrCart));
+  }
+
+  getTotalQuantity() {
+    let total = 0;
+
+    for (let i = 0; i < this.arrCart.length; i++) {
+      total += this.arrCart[i].quantity;
+    }
+
+    return total;
   }
 }
 export default ProductManage;
