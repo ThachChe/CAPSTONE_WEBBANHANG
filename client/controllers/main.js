@@ -120,7 +120,7 @@ function renderUI(data) {
         </div>
         <a href="#">
           <h5
-            class="text-xl text-heading text-white font-semibold tracking-tight"
+            class="text-lg text-heading text-white font-semibold tracking-tight"
           >
             ${product.name} (${product.quantity})
           </h5>
